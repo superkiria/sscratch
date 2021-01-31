@@ -9,8 +9,12 @@ import java.util.Date;
 @RestController
 @RequestMapping("/time")
 public class TimeService {
+
+    static private int count = 0;
+
     @GetMapping
     String getTime() {
-        return (new Date()).toString();
+        count++;
+        return (new Date()).toString() + ": " + count + "\n";
     }
 }
