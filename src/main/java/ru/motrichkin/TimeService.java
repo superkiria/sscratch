@@ -1,13 +1,15 @@
 package ru.motrichkin;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 
-@Controller
+@RestController
+@RequestMapping("/time")
 public class TimeService {
-    @RequestMapping("/time")
+    @GetMapping
     String getTime() {
         return (new Date()).toString();
     }
